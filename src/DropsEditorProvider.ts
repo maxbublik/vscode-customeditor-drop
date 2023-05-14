@@ -68,11 +68,11 @@ class DropsEditorProvider implements vscode.CustomTextEditorProvider {
 					Try to drag-n-drop pills from DROPSVIEW (under Explorer) onto this webview to add entries to the underlying json file.
 				</p>
 				<p style="line-height:2">
-					Every pill from DROPSVIEW has <kbd>event.dataTransfer.setData('text/uri-list', value);</kbd> - and the value appears in json's <kbd>urilist</kbd> field.
+					Every pill from DROPSVIEW has <kbd>dataTransfer.setData('text/uri-list', ...)</kbd> and drops work fine.
 					<br>
-					But if you try to drag-n-drop a file from Explorer tree view, nothing happens :-(
+					But if you try to drop a file from Explorer tree view, nothing happens :-(
 				</p>
-				<pre id="store" style="font-size:small"></pre>
+				<pre id="store"></pre>
 				<script nonce="${nonce}" src="${scriptSrc}"></script>
 			</body>
 		</html>`;

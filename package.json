@@ -1,0 +1,40 @@
+{
+	"name": "vscode-customeditor-drop",
+	"private": true,
+	"engines": {
+		"vscode": "^1.78.0"
+	},
+	"version": "0.0.1",
+	"main": "./out/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "DropsEditorProvider",
+				"displayName": "DropsEditorProvider",
+				"selector": [
+					{
+						"filenamePattern": "*.drops.json"
+					}
+				],
+				"priority": "default"
+			}
+		],
+		"views": {
+			"explorer": [
+				{
+					"type": "webview",
+					"id": "DropsView",
+					"name": "DropsView"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"build": "node esbuild-extension.mjs",
+		"watch": "node esbuild-extension.mjs -- --watch"
+	},
+	"devDependencies": {
+		"@types/vscode": "1.78",
+		"esbuild": "0.12.29"
+	}
+}
